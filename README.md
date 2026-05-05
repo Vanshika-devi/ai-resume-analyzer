@@ -87,6 +87,7 @@ AI Layer
 
 * Rule-based keyword extraction
 * Hugging Face Inference API (LLM integration)
+* llama models for better nlp and communication
 
 ---
 
