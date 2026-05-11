@@ -1,228 +1,375 @@
-# 🤖 AI Resume Analyzer (Full-Stack + LLM Integration)
+# 🚀 AI Resume Analyzer
 
-An end-to-end full-stack application that analyzes resumes against job descriptions, computes a compatibility score, extracts technical skills, and generates actionable improvement suggestions using rule-based NLP and LLM integration.
+An advanced AI-powered Resume Analyzer built using the MERN Stack, Python AI/ML services, NLP, and Ollama LLM integration.
 
----
-
-## 🚀 Overview
-
-The **AI Resume Analyzer** is designed to simulate a simplified Applicant Tracking System (ATS). It enables users to evaluate how well their resume aligns with a target job role.
-
-The system combines:
-
-* Deterministic logic (skill matching)
-* Lightweight NLP techniques
-* LLM-based suggestions (via Hugging Face APIs)
+The platform analyzes resumes, predicts ATS scores, extracts skills, recommends job roles, provides AI-generated feedback, and offers intelligent career suggestions.
 
 ---
 
-## 🎯 Core Features
+# ✨ Features
 
-### 📄 Resume Processing
+## 🔐 Authentication System
 
-* Upload resume files (text-based parsing)
-* Lightweight preprocessing for content extraction
+* JWT-based Login & Registration
+* Secure Password Hashing using bcryptjs
+* Protected Routes
+* Production-style Authentication Flow
 
-### 🧠 Skill Extraction Engine
+## 📄 Resume Analysis
 
-* Rule-based keyword matching using predefined skill sets
-* Case-insensitive detection for robustness
-* Easily extendable skill dictionary
+* PDF Resume Upload
+* Resume Text Extraction
+* ATS Score Prediction
+* NLP-based Skill Extraction
+* Job Role Prediction
+* Semantic Job Matching
+* Resume Improvement Suggestions
 
-### 📊 Job Match Scoring
+## 🤖 AI Features
 
-* Compares extracted skills with job description requirements
-* Computes a percentage-based compatibility score
-* Identifies:
+* Ollama LLM Integration
+* AI Resume Feedback
+* Career Suggestions
+* Intelligent Chatbot Assistant
+* Resume Optimization Suggestions
 
-  * ✅ Matched skills
-  * ❌ Missing skills
+## 📊 Machine Learning Features
 
-### 💡 AI-Powered Suggestions
+* Random Forest ATS Prediction Model
+* Logistic Regression Role Prediction
+* Sentence Transformers Semantic Matching
+* TF-IDF Vectorization
+* Dataset-driven ML Pipeline
 
-* Generates resume improvement suggestions
-* Integrates with Hugging Face inference API (LLMs)
-* Focuses on:
+## 🎨 Frontend Features
 
-  * Skill gaps
-  * Resume clarity
-  * Industry relevance
-
-### 💬 Career Assistant (Chat Interface)
-
-* Interactive chat UI for career-related queries
-* Designed for integration with LLM-based responses
-
----
-
-## 🏗️ System Architecture
-
-```id="arch01"
-Frontend (React + Vite)
-        ↓
-REST API (Spring Boot)
-        ↓
-AI Layer
- ├── Rule-based NLP (Skill Extraction)
- └── Hugging Face API (LLM Suggestions)
-```
+* Responsive Modern UI
+* Floating AI Chatbot
+* Dashboard Analytics
+* Resume Upload Interface
+* Multi-page Navigation
+* Dark Professional Theme
 
 ---
 
-## 🧰 Tech Stack
+# 🛠️ Tech Stack
 
-### Frontend
+## Frontend
 
-* React.js (Vite)
-* JavaScript (ES6+)
-* CSS (Custom UI + responsive layout)
+* React.js
+* Vite
+* Tailwind CSS
+* React Router DOM
+* Axios
+* Framer Motion
 
-### Backend
+## Backend
 
-* Java 21
-* Spring Boot 3.x
-* RESTful API architecture
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* Multer
+* pdf-parse
 
-### AI / NLP
+## AI/ML
 
-* Rule-based keyword extraction
-* Hugging Face Inference API (LLM integration)
-* llama models for better nlp and communication
+* Python
+* Flask
+* Scikit-learn
+* SpaCy
+* NLTK
+* Sentence Transformers
+* Ollama LLM
+* Pandas
+* NumPy
 
 ---
 
-## 📂 Project Structure
+# 📁 Project Structure
 
-```id="arch02"
-ai-resume-analyzer/
-├── backend/
-│   ├── controller/        # API endpoints
-│   ├── service/           # Business logic + AI integration
-│   └── application.properties
+```text
+ai-resume-analyzer
 │
-├── frontend/
-│   ├── src/
-│   │   ├── components/    # UI components
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── index.html
+├── backend
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── services
+│   ├── uploads
+│   ├── server.js
 │   └── package.json
+│
+├── ai-service
+│   ├── datasets
+│   ├── models
+│   ├── services
+│   ├── training
+│   ├── utils
+│   ├── app.py
+│   └── requirements.txt
+│
+├── src
+│   ├── components
+│   ├── pages
+│   ├── routes
+│   ├── services
+│   ├── context
+│   ├── App.jsx
+│   └── main.jsx
+│
+└── README.md
 ```
 
 ---
 
-## ⚙️ Local Setup
+# ⚙️ Installation
 
-### 🔹 Backend
+## 1️⃣ Clone Repository
 
-```bash id="run1"
-cd backend
-mvn spring-boot:run
-```
-
-Runs at:
-
-```id="run2"
-http://localhost:8080
+```bash
+git clone <repository-url>
+cd ai-resume-analyzer
 ```
 
 ---
 
-### 🔹 Frontend
+# 🌐 Frontend Setup
 
-```bash id="run3"
-cd frontend
+```bash
 npm install
+```
+
+Run frontend:
+
+```bash
 npm run dev
 ```
 
-Runs at:
+---
 
-```id="run4"
-http://localhost:5173
+# 🖥️ Backend Setup
+
+Go to backend folder:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run backend:
+
+```bash
+npm run dev
 ```
 
 ---
 
-## 🔗 API Specification
+# 🧠 AI Service Setup
 
-### POST `/analyze`
+Go to AI service folder:
 
-**Request:**
+```bash
+cd ai-service
+```
 
-* Multipart file (resume)
-* Job description (string)
+Create virtual environment:
 
-**Response:**
+## Windows
 
-```json id="api01"
-{
-  "score": 78,
-  "skills": ["Java", "React", "SQL"],
-  "missingSkills": ["Docker", "AWS"],
-  "suggestions": [
-    "Include cloud-based project experience",
-    "Add quantified achievements",
-    "Improve keyword alignment with job role"
-  ]
-}
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install SpaCy model:
+
+```bash
+python -m spacy download en_core_web_sm
 ```
 
 ---
 
-## 🤖 Hugging Face Integration
+# 🤖 Ollama Setup
 
-The system is designed to integrate with Hugging Face models for:
+Install Ollama:
 
-* Skill extraction enhancement
-* Resume feedback generation
-* Natural language suggestions
+[https://ollama.com](https://ollama.com)
 
-Example use case:
+Pull model:
 
-* Sending resume + job description as prompt
-* Receiving structured improvement insights
+```bash
+ollama pull phi3
+```
 
-> Note: API keys are handled securely via environment variables and are not exposed in the frontend.
+OR:
 
----
+```bash
+ollama pull llama3
+```
 
-## 📈 Future Enhancements
+Start Ollama:
 
-* PDF parsing (Apache Tika / PDFBox)
-* Advanced NLP (NER-based skill extraction)
-* Resume scoring using semantic similarity
-* Authentication & user dashboards
-* Deployment (Vercel + Render / Railway)
-* Persistent storage (MongoDB / PostgreSQL)
+```bash
+ollama serve
+```
 
 ---
 
-## 🎯 Learning Outcomes
+# ▶️ Start AI Service
+
+```bash
+python app.py
+```
+
+---
+
+# 🧪 Machine Learning Pipeline
+
+## Merge Datasets
+
+```bash
+python training/merge_datasets.py
+```
+
+## Train ATS Model
+
+```bash
+python training/train_ats_model.py
+```
+
+## Train Role Prediction Model
+
+```bash
+python training/train_role_model.py
+```
+
+---
+
+# 📡 API Endpoints
+
+## Authentication
+
+### Register
+
+```http
+POST /api/auth/register
+```
+
+### Login
+
+```http
+POST /api/auth/login
+```
+
+---
+
+## Resume Analysis
+
+### Upload Resume
+
+```http
+POST /api/analyze/resume
+```
+
+---
+
+## AI Service
+
+### Analyze Resume
+
+```http
+POST /analyze
+```
+
+### AI Chatbot
+
+```http
+POST /chat
+```
+
+---
+
+# 📊 AI Features Output
+
+The AI engine provides:
+
+* ATS Score Prediction
+* Resume Skill Extraction
+* Job Match Percentage
+* Predicted Job Role
+* AI-generated Feedback
+* Resume Suggestions
+* Career Recommendations
+
+---
+
+# 🔒 Security Features
+
+* JWT Authentication
+* Password Hashing
+* Protected APIs
+* Helmet Security Middleware
+* Rate Limiting
+* CORS Protection
+
+---
+
+# 📈 Future Improvements
+
+* Resume Version Tracking
+* Cloud Deployment
+* Real-time Analytics
+* Advanced Resume Ranking
+* Multi-language Resume Support
+* AI Interview Preparation
+* Voice-based AI Assistant
+* Docker Deployment
+* CI/CD Pipelines
+
+---
+
+# 💡 Learning Outcomes
 
 This project demonstrates:
 
-* Full-stack system design (React + Spring Boot)
-* REST API development and integration
-* Applied NLP techniques
-* LLM integration in real-world workflows
-* UI/UX structuring for interactive applications
+* Full Stack MERN Development
+* REST API Development
+* Authentication & Security
+* AI/ML Integration
+* NLP & Semantic Search
+* LLM Integration
+* Python Flask Services
+* Dataset Processing
+* Machine Learning Model Training
+* Production-style Architecture
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
-**Vanshika Devi**
-B.Tech Computer Science and Information Technology Student
-
----
-
-## ⭐ Contribution / Feedback
-
-If you find this project useful, feel free to:
-
-* Star ⭐ the repository
-* Suggest improvements
-* Open issues for enhancements
+Vanshika Devi
 
 ---
+
+# ⭐ Project Highlights
+
+* Full Stack AI Project
+* Real-world Resume Intelligence System
+* MERN + Python Hybrid Architecture
+* AI Chatbot Integration
+* Dynamic ML-driven Analysis
+* Portfolio-ready Advanced Project
