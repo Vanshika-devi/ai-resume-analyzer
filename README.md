@@ -1,71 +1,73 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
 # 🚀 AI Resume Analyzer
 
-An advanced AI-powered Resume Analyzer built using the MERN Stack, Python AI/ML services, NLP, and Ollama LLM integration.
+An advanced AI-powered Resume Analyzer built using the MERN Stack, FastAPI, Machine Learning, NLP, and Phi-3 LLM integration.
 
-The platform analyzes resumes, predicts ATS scores, extracts skills, recommends job roles, provides AI-generated feedback, and offers intelligent career suggestions.
+The platform analyzes resumes, predicts ATS scores, extracts skills, recommends job roles, performs semantic job matching, and provides intelligent AI-generated career guidance.
 
 ---
 
-# ✨ Features
+# 🌟 Features
 
-## 🔐 Authentication System
+## 🔐 Authentication & Security
 
-* JWT-based Login & Registration
-* Secure Password Hashing using bcryptjs
-* Protected Routes
-* Production-style Authentication Flow
+- JWT-based Authentication
+- Secure User Registration & Login
+- Password Hashing using bcryptjs
+- Protected Routes
+- Helmet Security Middleware
+- Express Rate Limiting
+- MongoDB Sanitization
+- XSS Protection
 
-## 📄 Resume Analysis
+---
 
-* PDF Resume Upload
-* Resume Text Extraction
-* ATS Score Prediction
-* NLP-based Skill Extraction
-* Job Role Prediction
-* Semantic Job Matching
-* Resume Improvement Suggestions
+# 📄 Resume Analysis Features
 
-## 🤖 AI Features
+- PDF Resume Upload
+- Resume Text Extraction
+- ATS Score Prediction
+- Resume Role Prediction
+- Skill Extraction using NLP
+- Resume Parsing
+- Resume Improvement Suggestions
+- Resume Skill Gap Analysis
 
-* Ollama LLM Integration
-* AI Resume Feedback
-* Career Suggestions
-* Intelligent Chatbot Assistant
-* Resume Optimization Suggestions
+---
 
-## 📊 Machine Learning Features
+# 🤖 AI Features
 
-* Random Forest ATS Prediction Model
-* Logistic Regression Role Prediction
-* Sentence Transformers Semantic Matching
-* TF-IDF Vectorization
-* Dataset-driven ML Pipeline
+- Phi-3 AI Chatbot Integration using Ollama
+- AI Career Guidance
+- AI Resume Feedback
+- AI-based Resume Optimization Suggestions
+- Intelligent Career Recommendations
+- Semantic Job Matching using Sentence Transformers
 
-## 🎨 Frontend Features
+---
 
-* Responsive Modern UI
-* Floating AI Chatbot
-* Dashboard Analytics
-* Resume Upload Interface
-* Multi-page Navigation
-* Dark Professional Theme
+# 📊 Machine Learning Features
+
+- Logistic Regression Role Prediction Model
+- Random Forest ATS Prediction Model
+- TF-IDF Vectorization
+- Semantic Similarity Matching
+- Dataset-driven ML Pipeline
+- NLP-based Resume Processing
+- Scikit-learn Model Training
+- Real-time Prediction APIs
+
+---
+
+# 🎨 Frontend Features
+
+- Modern Responsive UI
+- Dark Professional Theme
+- React + Vite Frontend
+- Protected Authentication Flow
+- Resume Upload Dashboard
+- AI Chatbot Interface
+- Dynamic Navigation
+- Production-style Routing
 
 ---
 
@@ -73,81 +75,124 @@ The platform analyzes resumes, predicts ATS scores, extracts skills, recommends 
 
 ## Frontend
 
-* React.js
-* Vite
-* Tailwind CSS
-* React Router DOM
-* Axios
-* Framer Motion
+- React.js
+- Vite
+- Tailwind CSS
+- Axios
+- React Router DOM
+- Framer Motion
+
+---
 
 ## Backend
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
-* Multer
-* pdf-parse
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Multer
+- pdf-parse
+- Helmet
+- Express Rate Limit
 
-## AI/ML
+---
 
-* Python
-* Flask
-* Scikit-learn
-* SpaCy
-* NLTK
-* Sentence Transformers
-* Ollama LLM
-* Pandas
-* NumPy
+## AI / ML Service
+
+- Python
+- FastAPI
+- Scikit-learn
+- Pandas
+- NumPy
+- NLTK
+- Sentence Transformers
+- Ollama
+- Phi-3 LLM
+- SpaCy
+
+---
+
+# 🧠 AI Architecture
+
+```text
+Frontend (React)
+        │
+        ▼
+Node.js Backend API
+        │
+        ▼
+FastAPI AI Service
+        │
+ ┌──────┼───────────────┐
+ │      │               │
+ ▼      ▼               ▼
+ATS ML  Role ML     Phi-3 AI
+Model   Model       Chatbot
+```
 
 ---
 
 # 📁 Project Structure
 
 ```text
-ai-resume-analyzer
+ai-resume-analyzer/
 │
-├── backend
-│   ├── controllers
-│   ├── middleware
-│   ├── models
-│   ├── routes
-│   ├── services
-│   ├── uploads
-│   ├── server.js
-│   └── package.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
 │
-├── ai-service
-│   ├── datasets
-│   ├── models
-│   ├── services
-│   ├── training
-│   ├── utils
+├── backend/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── uploads/
+│   ├── utils/
+│   ├── .env
+│   ├── package.json
+│   └── server.js
+│
+├── ai-service/
+│   ├── datasets/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── training/
+│   ├── utils/
+│   ├── uploads/
+│   ├── venv/
 │   ├── app.py
 │   └── requirements.txt
 │
-├── src
-│   ├── components
-│   ├── pages
-│   ├── routes
-│   ├── services
-│   ├── context
-│   ├── App.jsx
-│   └── main.jsx
-│
-└── README.md
+├── .gitignore
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-# ⚙️ Installation
+# ⚙️ Installation Guide
 
-## 1️⃣ Clone Repository
+# 1️⃣ Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Vanshika-devi/ai-resume-analyzer.git
+
 cd ai-resume-analyzer
 ```
 
@@ -159,10 +204,16 @@ cd ai-resume-analyzer
 npm install
 ```
 
-Run frontend:
+Run Frontend:
 
 ```bash
 npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
 ```
 
 ---
@@ -181,10 +232,16 @@ Install dependencies:
 npm install
 ```
 
-Run backend:
+Run Backend:
 
 ```bash
 npm run dev
+```
+
+Backend runs on:
+
+```text
+http://localhost:5000
 ```
 
 ---
@@ -197,22 +254,33 @@ Go to AI service folder:
 cd ai-service
 ```
 
-Create virtual environment:
+---
+
+# Create Virtual Environment
 
 ## Windows
 
 ```bash
-python -m venv venv
+py -3.11 -m venv venv
+```
+
+Activate virtual environment:
+
+```bash
 venv\Scripts\activate
 ```
 
-Install dependencies:
+---
+
+# Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Install SpaCy model:
+---
+
+# Install SpaCy Model
 
 ```bash
 python -m spacy download en_core_web_sm
@@ -224,18 +292,14 @@ python -m spacy download en_core_web_sm
 
 Install Ollama:
 
-[https://ollama.com](https://ollama.com)
+```text
+https://ollama.com
+```
 
-Pull model:
+Pull Phi-3 model:
 
 ```bash
 ollama pull phi3
-```
-
-OR:
-
-```bash
-ollama pull llama3
 ```
 
 Start Ollama:
@@ -246,47 +310,71 @@ ollama serve
 
 ---
 
-# ▶️ Start AI Service
+# ▶️ Start FastAPI AI Service
 
 ```bash
-python app.py
+uvicorn app:app --reload
+```
+
+AI Service runs on:
+
+```text
+http://127.0.0.1:8000
+```
+
+Swagger API Docs:
+
+```text
+http://127.0.0.1:8000/docs
 ```
 
 ---
 
 # 🧪 Machine Learning Pipeline
 
-## Merge Datasets
+# Merge Datasets
 
 ```bash
-python training/merge_datasets.py
+python -m training.merge_datasets
 ```
 
-## Train ATS Model
+---
+
+# Train Role Prediction Model
 
 ```bash
-python training/train_ats_model.py
+python -m training.train_role_model
 ```
 
-## Train Role Prediction Model
+---
+
+# Train ATS Prediction Model
 
 ```bash
-python training/train_role_model.py
+python -m training.train_ats_model
+```
+
+---
+
+# Evaluate Models
+
+```bash
+python -m training.evaluate_models
 ```
 
 ---
 
 # 📡 API Endpoints
 
-## Authentication
+# Authentication APIs
 
-### Register
+## Register User
 
 ```http
 POST /api/auth/register
 ```
 
-### Login
+## Login User
 
 ```http
 POST /api/auth/login
@@ -294,68 +382,97 @@ POST /api/auth/login
 
 ---
 
-## Resume Analysis
+# Resume APIs
 
-### Upload Resume
+## Upload Resume
 
 ```http
-POST /api/analyze/resume
+POST /api/resume/upload
 ```
 
 ---
 
-## AI Service
+# AI Prediction APIs
 
-### Analyze Resume
-
-```http
-POST /analyze
-```
-
-### AI Chatbot
+## Predict ATS Score + Job Role
 
 ```http
-POST /chat
+POST /predict/resume
 ```
 
 ---
 
-# 📊 AI Features Output
+# AI Recommendation APIs
 
-The AI engine provides:
+## Recommend Jobs
 
-* ATS Score Prediction
-* Resume Skill Extraction
-* Job Match Percentage
-* Predicted Job Role
-* AI-generated Feedback
-* Resume Suggestions
-* Career Recommendations
+```http
+POST /recommend/jobs
+```
+
+---
+
+# AI Chatbot APIs
+
+## Chat with Phi-3
+
+```http
+POST /chatbot/ask
+```
+
+---
+
+# 📊 Machine Learning Models
+
+| Model | Purpose |
+|---|---|
+| Logistic Regression | Job Role Prediction |
+| Random Forest Regressor | ATS Score Prediction |
+| Sentence Transformers | Semantic Job Matching |
+| TF-IDF Vectorizer | Resume Text Processing |
+
+---
+
+# 🧠 Datasets Used
+
+- AI_Resume_Screening.csv
+- job_dataset.csv
+- resume_dataset_1200.csv
+- 06_skills.csv
+- 05_person_skills.csv
+- 04_experience.csv
+- 03_education.csv
+- 02_abilities.csv
+- 01_people.csv
 
 ---
 
 # 🔒 Security Features
 
-* JWT Authentication
-* Password Hashing
-* Protected APIs
-* Helmet Security Middleware
-* Rate Limiting
-* CORS Protection
+- JWT Authentication
+- Protected APIs
+- Password Encryption
+- Helmet Security
+- Rate Limiting
+- MongoDB Sanitization
+- XSS Protection
 
 ---
 
 # 📈 Future Improvements
 
-* Resume Version Tracking
-* Cloud Deployment
-* Real-time Analytics
-* Advanced Resume Ranking
-* Multi-language Resume Support
-* AI Interview Preparation
-* Voice-based AI Assistant
-* Docker Deployment
-* CI/CD Pipelines
+- Resume vs Job Description Matching
+- AI Interview Question Generator
+- Resume Ranking System
+- AI-powered Resume Builder
+- Voice-based AI Assistant
+- Cloud Deployment
+- Docker Support
+- CI/CD Pipeline
+- Real-time Analytics Dashboard
+- Advanced NLP Pipeline
+- Vector Database Integration
+- Multi-language Resume Analysis
 
 ---
 
@@ -363,30 +480,44 @@ The AI engine provides:
 
 This project demonstrates:
 
-* Full Stack MERN Development
-* REST API Development
-* Authentication & Security
-* AI/ML Integration
-* NLP & Semantic Search
-* LLM Integration
-* Python Flask Services
-* Dataset Processing
-* Machine Learning Model Training
-* Production-style Architecture
+- Full Stack MERN Development
+- REST API Development
+- FastAPI Integration
+- Authentication & Security
+- Machine Learning Pipelines
+- NLP & Semantic Search
+- AI Chatbot Integration
+- Dataset Processing
+- Model Training & Evaluation
+- Production-style Project Architecture
 
 ---
 
 # 👩‍💻 Author
 
-Vanshika Devi
+## Vanshika Devi
+
+GitHub:
+
+```text
+https://github.com/Vanshika-devi
+```
 
 ---
 
 # ⭐ Project Highlights
 
-* Full Stack AI Project
-* Real-world Resume Intelligence System
-* MERN + Python Hybrid Architecture
-* AI Chatbot Integration
-* Dynamic ML-driven Analysis
-* Portfolio-ready Advanced Project
+- Full Stack AI + ML Project
+- MERN + FastAPI Hybrid Architecture
+- Real-world Resume Intelligence System
+- Semantic AI Matching
+- Phi-3 AI Chatbot
+- Dataset-driven Machine Learning
+- Production-style Authentication System
+- Portfolio-ready Advanced Project
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
