@@ -125,10 +125,10 @@ Node.js Backend API
 FastAPI AI Service
         │
  ┌──────┼───────────────┐
- │      │               │
- ▼      ▼               ▼
-ATS ML  Role ML     Phi-3 AI
-Model   Model       Chatbot
+ │       │                  |
+ ▼      ▼                  ▼
+ATS ML  Role ML           Phi-3 AI
+Model   Model              Chatbot
 ```
 
 ---
