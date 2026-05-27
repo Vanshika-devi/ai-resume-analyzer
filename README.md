@@ -473,6 +473,7 @@ POST /chatbot/ask
 - Advanced NLP Pipeline
 - Vector Database Integration
 - Multi-language Resume Analysis
+- Multi-career support system
 
 ---
 
