@@ -474,6 +474,7 @@ POST /chatbot/ask
 - Vector Database Integration
 - Multi-language Resume Analysis
 - Multi-career support system
+- Adding personalized recommandations
 
 ---
 
